@@ -11,5 +11,7 @@ if(strpos($text, $word)) {
 if(str_contains($text, $word)) {
     echo "$text contains -> $word";
 }
+
+
 ?>
 

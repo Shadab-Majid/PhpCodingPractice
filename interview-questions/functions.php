@@ -25,4 +25,31 @@ function tringle(int $colmn_and_rows_nums) {
 }
 
 
+function revervseStringByWord($str) {
+    $arr = explode(' ', $str);
+    // for($i = count($arr)-1; $i >= 0; $i--) {
+    //     $new_arr []= $arr[$i];
+    // }
+    // return implode(' ',$new_arr);
+
+    // var_dump($arr);
+    return implode(" ", array_reverse($arr));
+    // var_dump($arr);
+}
+
+function removeDuplicate(array $arr) : array {
+
+    $new_arr = [];
+    foreach($arr as $item) {
+        if(!in_array($item, $new_arr)) {
+            $new_arr[] = $item;
+            var_dump($new_arr);
+        }else {
+            continue;
+        }
+    }
+    return $new_arr;
+}
+
+
 
