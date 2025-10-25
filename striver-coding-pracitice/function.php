@@ -38,3 +38,46 @@ function secondLargest(array $arr) : int {
     }
     return $second_largest;
 }
+/**
+ * Extracting digits function.
+ */
+//function extraction of digits.
+function digitExtractin(int $num) : int {
+
+    $counter = 0;
+    while($num > 0) {
+        $lst_digit = $num % 10; // it will the last 
+        $counter += 1;
+        $num = $num/10;
+    }
+    return $counter;
+}
+
+//revserse a number using digit extraction.
+function reverseUsingExtraction($num) : int {
+    $reverse_num = 0;
+    while($num > 0) {
+        $last_digit = $num % 10;
+        $reverse_num = ($reverse_num * 10) + $last_digit;
+        $num = intdiv($num, 10);
+    }
+    return $reverse_num;
+}
+
+//Armstrong function
+
+function isArmstrong($num) {
+    $temp_var = $num;
+    $sum = 0;
+    while ($temp_var > 0) {
+        $digit = $temp_var % 10;
+        $sum += ($digit * $digit * $digit);
+        $temp_var = intdiv($temp_var, 10);
+    }
+    if($sum == $num) {
+        return true;
+    }else {
+        return false;
+    }
+    // return $sum == $num ? true : false;
+}
