@@ -81,3 +81,38 @@ function isArmstrong($num) {
     }
     // return $sum == $num ? true : false;
 }
+
+
+
+function lastgestElmntInArray(array $arr) : int {
+    $largest = $arr[0];
+    foreach($arr as $num) {
+        if($num > $largest) {
+            $largest = $num;
+        }
+    }
+    return $largest;
+}
+
+function secLgstInArray(array $arr) : int {
+
+    if(count($arr) === 1) {
+        return 'no sec element found';
+    }
+    $largest = $arr[0];
+    $secLargest = $arr[1];
+
+    if($secLargest > $largest) {
+        $secLargest = $largest;
+    }
+    for($i = 2; $i < count($arr); $i++) {
+        if($arr[$i] > $secLargest && $arr[$i] < $largest) {
+            $secLargest = $arr[$i];
+        }
+        elseif($arr[$i] > $largest) {
+            $secLargest = $largest;
+            $largest = $arr[$i];
+        }
+    }
+    return $secLargest;
+}

@@ -98,11 +98,18 @@ $second_largest = secondHighest($arr);
 //get array length 
 
 $arr = [1,3,4,5,3];
-
+echo getArryaLen($arr);
 function getArryaLen(array $arr) {
     if(empty($arr)) {
         return;
     }
-    for($i = 0; )
+    $arrlen = 0;
+    foreach($arr as $item) {
+        $arrlen += 1;
+    }
+    return $arrlen;
 }
 ?>
+
+
+

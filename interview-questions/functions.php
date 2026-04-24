@@ -37,6 +37,16 @@ function revervseStringByWord($str) {
     // var_dump($arr);
 }
 
+function reverseByWordString($str) {
+    $arr = explode(' ', $str);
+    // echo count($arr);
+    for($i = count($arr)-1; $i >= 0; $i--) {
+        $reversed_array[] = $arr[$i]; 
+    }
+    return implode(' ', $reversed_array);
+
+}
+
 function removeDuplicate(array $arr) : array {
 
     $new_arr = [];
@@ -123,4 +133,38 @@ function twoSum(array $nums, int $target) : array {
         }
         $output[] = $key;
     }
+}
+
+
+function removeDuplicateFromArray(array $arr): array {
+    // [1,2,4,3,2,1] -> [1,2,3,4]
+    //without using sorting
+    $new_arr = [];
+    for($i = 0; $i < count($arr)-1; $i++) {
+        if(!in_array($arr[$i], $new_arr)) {
+            $new_arr[] = $arr[$i];
+        }
+        else {
+            continue;
+        }
+    }
+
+    //using sorting 
+    $sorted_array = sort($arr);
+    for($i = 0; $i < count($arr)-1; $i++) {
+        if($arr[$i] == $arr[$i+1]) {
+            $new_arr[] = $arr[$i]; 
+        }
+    }
+    return $new_arr;
+}
+
+
+function squareTheEvenIdx(array $arr): array {
+    foreach($arr as $item) {
+        if($item % 2 == 0) {
+            $item *= $item;
+        }
+    }
+    return $arr;
 }

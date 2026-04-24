@@ -43,3 +43,34 @@ function truncateWords(string $text, int $limit): string {
 
 $str = 'shadab majid is a good boy';
 // echo $trucated_str;
+
+
+
+echo '5' + 2;
+
+//function to reverse string without using strrev
+
+function reverstring(string $str): string{
+    $new_str = '';
+    echo strlen($str);
+    for($i = strlen($str)-1; $i >= 0; $i--) {
+        $new_str .= $str[$i];
+    }
+    return $new_str;
+}
+
+$str = 'shadab';
+echo reverstring($str);
+
+// funciton reverse string by word
+
+function reverseStringByWord(string $str): string {
+   $reverse = [];
+   $arr = explode(' ', $str);
+   for($i = count($arr)-1; $i >= 0; $i--) {
+        $reverse[] = $arr[$i];
+   }
+   return implode(' ', $reverse);
+}
+
+echo reverseStringByWord('shadab majid');
